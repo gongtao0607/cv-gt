@@ -1,0 +1,198 @@
+%% start of file `cvbasic.tex'; shows exemplarily the use of koma-moderncvclassic
+%% (c) Copyright 2010--2012 Salome Södergran (salome.soedergran@gmx.ch)
+\documentclass[%
+fontsize=11pt,%
+a4paper,%
+pagesize,%
+headinclude,footinclude,%
+headings=normal,%
+]{scrartcl}
+\input{macro.tex}
+
+\input{font.tex}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=5cm]{geometry} % page layout
+\usepackage{scrpage2}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[american]{babel}
+
+\tolerance=200 % white space
+\clubpenalty = 1000 % orphans
+\widowpenalty = 1000 % widows
+
+% ===========================
+%    VARIABLES
+% ===========================
+%    must be defined, BEFORE koma-moderncvclassic is loaded!
+
+% address; not needed variables should be commented out
+\renewcommand*{\title}{Lebenslauf}% für PDF
+\cvbl{
+\newcommand*{\firstname}{TAO}
+}{
+\providecommand*{\firstname}{}
+\renewcommand*{\firstname}{龚}
+}
+\cvbl{
+\newcommand*{\familyname}{GONG}
+}{
+\providecommand*{\familyname}{}
+\renewcommand*{\familyname}{韬}
+}
+\newcommand*{\acadtitle}{\cvbl{Undergraduate}{本科}}
+\newcommand*{\addressstreet}{\cvbl{No21 DORM, Beihang UNIV}{北京市，海淀区}}
+\newcommand*{\addresscity}{\cvbl{Beijing, China}{北京航空航天大学21号宿舍楼}}
+%\newcommand*{\address}[2]{\addressstreet{#1}\addresscity{#2}}
+%\newcommand*{\mobile}{}
+\newcommand*{\mobile}{+86 15210988463}
+%\newcommand*{\phone}{}
+%\newcommand*{\faxnr}{}
+\newcommand*{\email}{gongtao0607@gmail.com}
+%\newcommand*{\extrainfo}{}
+%\renewcommand*{\quote}{}
+
+% ===========================
+%    LENGTHS
+% ===========================
+%    must be defined, BEFORE koma-moderncvclassic is loaded!
+
+% left column width (default value: 2,79cm)
+% uncomment the \newlength-command, and uncomment and adjust one of the \set...-commands to change the default value
+\newlength\myhintscolumnwidth
+% \settowidth\myhintscolumnwidth{Left column takes this text's width}
+\setlength\myhintscolumnwidth{.1\textwidth}
+% \setlength\myhintscolumnwidth{5cm}
+
+
+% ===========================
+%    KOMA-MODERNCVCLASSIC
+% ===========================
+
+\usepackage[myblue]{koma-moderncvclassic} % color theme as option; default = myblue; other predefined colors that may be used: red, green, blue, cyan, magenta, yellow, black, white, darkgray, gray, lightgray
+
+% picture
+\photo[noframe]{3cm}{picture.jpg}
+% 'frame' gives a frame around the picture (=default), 'noframe' does not;
+% '3cm' is the width the picture must be resized to;
+% 'picture.jpg' is the name of the picture file
+
+
+% ===========================
+%    ADAPTIONS
+% ===========================
+%\renewcommand*{\familydefault}{\sfdefault}% default font sans-serif
+%\renewcommand*{\addressfont}{\normalsize\sffamily\mdseries\slshape}% sans-serif font for address, too
+%\renewcommand{\firstnamefont}{\fontsize{24}{26}\sffamily\mdseries\upshape} % name in smaller font
+\newcommand*{\totalpagemark}{\usekomafont{pagenumber}\thepage/\pageref{lastpage}}% for page and pagetotal
+ 
+% ===========================
+%    HEAD- AND FOOTLINES
+% ===========================
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ifoot{CV~\firstname~\familyname}
+\ofoot{\totalpagemark}
+%\ihead{}
+%\ohead{}
+
+% ===========================
+%    BIBLIOGRAPHY
+% ===========================
+
+\usepackage[backend=bibtex8,% or biber
+style=authortitle,% 
+sorting=ydnt,% sorted by year, descending
+]{biblatex}
+\bibliography{cv-gt.bib}
+\defbibheading{bibliography}[\cvbl{Publications}{出版物}]{\section{#1}}
+
+\usepackage{xpatch}
+
+% Just for demonstration
+\ExecuteBibliographyOptions{maxbibnames=99}%firstinits,maxbibnames=99}
+\DeclareNameAlias{default}{last-first/first-last}
+
+\newbool{bbx:emph}
+
+\renewcommand*{\mkbibnamefirst}[1]{\ifbool{bbx:emph}{\emph{#1}}{#1}}
+\renewcommand*{\mkbibnamelast}[1]{\ifbool{bbx:emph}{\emph{#1}}{#1}}
+\renewcommand*{\mkbibnameprefix}[1]{\ifbool{bbx:emph}{\emph{#1}}{#1}}
+\renewcommand*{\mkbibnameaffix}[1]{\ifbool{bbx:emph}{\emph{#1}}{#1}}
+
+\newbibmacro*{name:emph}{%
+  \ifboolexpr{ test {\ifcurrentname{author}} and
+               test {\ifbibliography} and
+%               test {\ifentrytype{inproceedings}} and
+               (( test {\iffieldundef{usera}} and
+                  test {\ifnumequal{\value{listcount}}{1}} ) or
+                  test {\ifnumequal{\number\numexpr\thefield{usera}+0\relax}
+                                   {\value{listcount}}} ) }
+   {\global\booltrue{bbx:emph}}
+   {\global\boolfalse{bbx:emph}}}
+
+\xpretobibmacro{name:last}{\usebibmacro{name:emph}}{}{}
+\xpretobibmacro{name:first-last}{\usebibmacro{name:emph}}{}{}
+\xpretobibmacro{name:last-first}{\usebibmacro{name:emph}}{}{}    
+
+% ==================================================================
+%       DOCUMENT
+% ==================================================================
+\begin{document}
+
+\maketitle
+
+%\section{\cvbl{Personal Information}{个人信息}}
+%\cvbl{
+%\cvline{margintext}{linetext}
+%}{
+%\cvline{待填充}{blabla}
+%}
+
+\section{\cvbl{Education}{教育}}
+\input{education.tex}
+\section{\cvbl{Job Training}{实习}}
+\input{jobtraining.tex}
+
+\section{\cvbl{Project Experience}{项目经历}}
+\input{projectexperience.tex}
+
+\nocite{*}
+\printbibliography
+
+\section{\cvbl{Award}{获奖}}
+\input{award.tex}
+
+\section{\cvbl{Computer Knowledges}{计算机技能}}
+\input{computerknowledges.tex}
+
+\section{\cvbl{Personal Interests}{个人兴趣}}
+\input{personalinterests.tex}
+
+\section{\cvbl{Social Works}{社会工作}}
+\cvbl{
+\cvline{}{Ubuntu's Chinese translation group}
+}{
+\cvline{}{Ubuntu 中文翻译组成员}
+}
+\cvbl{
+\cvline{}{ArchWiki's Chinese translation}
+}{
+\cvline{}{ArchWiki(ArchLinux在线文档)中文翻译}
+}
+\cvbl{
+\cvline{}{Contribute code to OpenRISC System on Chip community}
+}{
+\cvline{}{在OpenRISC片上系统(ORPSOC)社区贡献代码}
+}
+\cvbl{
+\cvline{}{Contribute code to Linux community}
+}{
+\cvline{}{在Linux社区贡献代码}
+}
+\section{\cvbl{Languages}{语言}}
+\cvlanguage{Chinese}{native}{}
+\cvlanguage{English}{fair}{Good at academical reading}
+
+
+\label{lastpage}% needed for computing pagetotal
+\end{document}
