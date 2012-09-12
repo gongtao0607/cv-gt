@@ -7,6 +7,7 @@ pagesize,%
 headinclude,footinclude,%
 headings=normal,%
 ]{scrartcl}
+\usepackage[unicode=true,colorlinks=false,pdfborder={0 0 0}]{hyperref}
 \input{macro.tex}
 
 \input{font.tex}
@@ -27,16 +28,16 @@ headings=normal,%
 
 % address; not needed variables should be commented out
 \renewcommand*{\title}{Lebenslauf}% für PDF
-\cvbl{
-\newcommand*{\firstname}{TAO}
-}{
 \providecommand*{\firstname}{}
+\providecommand*{\familyname}{}
+\cvbl{
+\renewcommand*{\firstname}{TAO}
+}{
 \renewcommand*{\firstname}{龚}
 }
 \cvbl{
-\newcommand*{\familyname}{GONG}
+\renewcommand*{\familyname}{GONG}
 }{
-\providecommand*{\familyname}{}
 \renewcommand*{\familyname}{韬}
 }
 \newcommand*{\acadtitle}{\cvbl{Undergraduate}{本科}}
