@@ -1,42 +1,48 @@
 \cvbl{
-\cventry{2012}{Autopilot System Hardware}{ZhongKeYinYi UAV Co.,Ltd}{}{}{
+\cventry{2012}{Autopilot System Hardware}{\zkyyen{}}{}{}{
 Selected sensors, desiged and installed autopilot system.\\
 Ported Linux, wrote drivers, fixed bugs.\\
-Made a PWM generator and trimmer on FPGA.}
+Design a PWM\footnotemark generator and trimmer on FPGA\footnotemark, wrote driver for Linux.}
+\addtocounter{footnote}{-2}
+\stepcounter{footnote}\footnotetext{PWM: Pulse-width modulation.}
+\stepcounter{footnote}\footnotetext{FPGA: Field-Programmable Gate Array.}
 }{
-\cventry{2012}{自动驾驶仪硬件系统}{中科银翼无人机公司}{}{}{
+\cventry{2012}{自动驾驶仪硬件系统}{\zkyycn{}}{}{}{
 选择传感器,设计和安装自驾仪控制系统.\\
 移植Linux,编写驱动程序,修复bug.\\
-使用FPGA制作可编程PWM生成,修正器.}
+在FPGA\footnotemark上设计制作可编程PWM\footnotemark生成,修正器,并编写Linux驱动程序.}
+\addtocounter{footnote}{-2}
+\stepcounter{footnote}\footnotetext{FPGA:现场可编程逻辑门阵列.}
+\stepcounter{footnote}\footnotetext{PWM:脉冲宽度调制.}
 }
 \cvbl{
 \cventry{2012}{OpenRISC System on Chip(ORPSoC)}{}{}{}{
 Ported ORPSoC to DE0-Nano development board.\\
-Ported Linux, connected and drove on board devices.\\
-Fixed bugs in ORPSoC and Linux and submited patches.}
+Ported Linux, drove on board devices.\\
+Fixed bugs and submited patches.}
 }{
-\cventry{2012}{OpenRISC片上系统(ORPSOC)}{}{}{}{
-在DE0-Nano开发板上移植ORPSOC.\\
-移植Linux,连接和驱动开发板的自带外设.\\
-修复ORPSoC和Linux中的bug并提交patch.}
+\cventry{2012}{OpenRISC片上系统(ORPSoC)}{}{}{}{
+在DE0-Nano开发板上移植ORPSoC.\\
+移植Linux,驱动板载外设.\\
+修复的bug并提交patch.}
 }
 \cvbl{
-\cventry{2012}{Server Maintaining}{ZhongKeYinYi UAV Co.,Ltd}{}{}{
+\cventry{2012}{Server Maintaining}{\zkyyen{}}{}{}{
 Constructed the network infrastructure in company.\\
 Installed and configured server, including web service, version control service, telephone switching and VoIP service, security surveillance system, netfilter firewall.}
 }{
-\cventry{2012}{网络服务器维护}{中科银翼无人机公司}{}{}{
-安装搭建网络基础设施\\
-搭建和配置服务器,包括网站服务,版本库服务,电话交换和VoIP服务,安防监控系统,Netfilter防火墙}
+\cventry{2012}{网络服务器维护}{\zkyycn{}}{}{}{
+安装搭建网络基础设施.\\
+搭建和配置服务器,包括网站服务,版本库服务,电话交换和VoIP服务,安防监控系统,Netfilter防火墙.}
 }
 \cvbl{
-\cventry{2011-2012}{Wind-Solor Hybrid Powered Battery Charger}{ZhongKeYinYi UAV Co.,Ltd}{}{}{
+\cventry{2011-2012}{Wind-Solor Hybrid Powered Battery Charger}{\zkyyen{}}{}{}{
 Designed circuit.\\
 Designed and soldered sample PCB(Printed Circuit Board).\\
 Wrote firmware, provided API for UI application.
 }
 }{
-\cventry{2011-2012}{风光互补充电池充电器}{中科银翼无人机公司}{}{}{
+\cventry{2011-2012}{风光互补充电池充电器}{\zkyycn{}}{}{}{
 设计硬件电路和电路板.\\
 加工和焊接样板.\\
 编写固件,向上层提供编程接口.}
@@ -53,29 +59,66 @@ Wrote dll(dynamic link library) on PC to provide data for User-Interface.}
 在PC上编写dll用于向用户界面提供数据.}
 }
 \cvbl{
-\cventry{2011}{Research on powersaving of Intel SCC platform}{}{}{}{
-Study the Intel SCC architecture and provided RCCE library.\\
+\cventry{2011}{Research on powersaving of Intel SCC\footnotemark platform}{\icaen{}}{}{}{
+Study the Intel SCC architecture and RCCE library.\\
 Using RCCE API to adjust frenquency of cores running mpi program to recude energy consumpt.}
+\footnotetext{SCC: Intel's Single-chip Cloud Computer microprocessor.}
 }{
-\cventry{2011}{Intel SCC功耗管理研究}{系统结构研究所}{}{}{
+\cventry{2011}{Intel SCC\footnotemark功耗管理研究}{\icacn{}}{}{}{
 学习Intel SCC结构和提供的RCCE库.\\
-使用RCCE来动态调整mpi程序在每个核心上的能耗}
+使用RCCE来动态调整mpi程序在每个核心上的能耗.}
+\footnotetext{SCC: 英特尔Single-chip Cloud Computer处理器.}
 }
 \cvbl{
-\cventry{2011}{High-Performance-Computing's Nodes Managing}{}{}{}{
+\cventry{2011}{Research on directory organization of ccNUMA\footnotemark}{\icaen{}}{}{}{
+Study source code of RSIM project.\\
+Rewrote RSIM for simulate new directory organization.\\
+Wrote scripts to run benchmarks on simulation automatically.}
+\footnotetext{ccNUMA: cache coherent Non-Uniform Memory Access.}
+}{
+\cventry{2011}{ccNUMA\footnotemark目录结构研究}{\icacn{}}{}{}{
+研究学习了RSIM 项目的代码.\\
+修改RSIM 的代码用于仿真新的目录结构.\\
+编写脚本用于自动化仿真测试.}
+\footnotetext{ccNUMA: 一致性高速缓存非均匀存储访问模型.}
+}
+\cvbl{
+\cventry{2011}{Research on interconnections architecture of many-core CMP\footnotemark}{\icaen{}}{}{}{
+Study GEM5 project.\\
+Used GEM5 to simulate designed interconnections architecture.}
+\footnotetext{CMP: Chip MultiProcessor.}
+}{
+\cventry{2011}{众核处理器互连结构的研究}{\icacn{}}{}{}{
+学习的GEM5项目.\\
+使用GEM5测试设计的处理器互联结构.}
+}
+\cvbl{
+\cventry{2011}{Research on Xen Virtual Machine Live Migration}{\icaen{}}{}{}{
+Study Xen's developer API.\\
+Wrote program to calculate dirty pages produced by a virtual machine.
+}
+}{
+\cventry{2011}{Xen虚拟机热迁移研究}{\icacn{}}{}{}{
+学习Xen开发函数.\\
+编写程序统计虚拟机产生的内存脏页}
+}
+\cvbl{
+\cventry{2011}{High-Performance-Computing's Nodes Managing}{\icaen{}}{}{}{
 Installed and configured Ganglia and Nagios service on computing nodes.\\
 Wrote php interface for submitting computing jobs and recieving results.}
 }{
-\cventry{2011}{高性能计算组节点管理}{系统结构研究所}{}{}{
-在节点上安装和配置Ganglia和Nagios监视服务.\\
-编写了php界面用于提交计算任务和取回运行结果.}
+\cventry{2011}{高性能计算组节点管理}{\icacn{}}{}{}{
+为计算节点配置Ganglia和Nagios监视服务.\\
+编写php界面用于提交计算任务和取回运行结果.}
 }
 \cvbl{
-\cventry{2010-2011}{Robot Vision Controller}{Beihang Robot Team for Robocon 2011}{}{}{
+\cventry{2010-2011}{Robot Vision Controller}{Beihang Robot Team for Robocon\footnotemark 2011}{}{}{
 Ported Linux and OpenCV library to S3C2410 board.\\
 Rewrote image capture code to support video format of using camera.}
+\footnotetext{Robocon: The Asia-Pacific Robot Contest.}
 }{
-\cventry{2010-2011}{机器人视觉控制器}{Robocon 2011北航机器人队}{}{}{
+\cventry{2010-2011}{机器人视觉控制器}{Robocon\footnotemark 2011北航机器人队}{}{}{
 在S3C2410开发板上移植Linux和OpenCV库.\\
-重写了OpenCV中的图像捕获部分以支持使用的摄像头视频格式.}
+重写OpenCV中的图像捕获部分以支持使用的摄像头视频格式.}
+\footnotetext{Robocon: 亚太大学生机器人大赛.}
 }
