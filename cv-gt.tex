@@ -12,7 +12,7 @@ headings=normal,%
 
 \input{font.tex}
 \usepackage[left=2cm,right=2cm,top=3cm,bottom=5cm]{geometry} % page layout
-\usepackage{scrpage2}
+\usepackage[markuppercase]{scrpage2}
 %\usepackage[utf8]{inputenc}
 %\usepackage[T1]{fontenc}
 %\usepackage[american]{babel}
@@ -101,7 +101,8 @@ headings=normal,%
 % ===========================
 
 \usepackage[backend=bibtex8,% or biber
-style=authortitle,% 
+%style=authortitle,% 
+style=numeric,% 
 sorting=ydnt,% sorted by year, descending
 ]{biblatex}
 \bibliography{cv-gt.bib}
@@ -135,6 +136,7 @@ sorting=ydnt,% sorted by year, descending
 \xpretobibmacro{name:first-last}{\usebibmacro{name:emph}}{}{}
 \xpretobibmacro{name:last-first}{\usebibmacro{name:emph}}{}{}    
 
+
 % ==================================================================
 %       DOCUMENT
 % ==================================================================
@@ -158,7 +160,7 @@ sorting=ydnt,% sorted by year, descending
 \input{projectexperience.tex}
 
 \nocite{*}
-\printbibliography
+\printbibliography[prefixnumbers=A,omitnumbers=false]
 
 \section{\cvbl{Award}{获奖}}
 \input{award.tex}
