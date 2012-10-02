@@ -6,9 +6,9 @@ all:
 	xelatex moderncv
 		
 clean:
-	rm *.aux *.bbl *.blg
-	rm moderncv.d
-	rm moderncv.out
-	rm moderncv.log
-	rm moderncv.run.xml
-	rm moderncv.pdf
+	-rm *.aux *.bbl *.blg
+	-rm moderncv.d
+	-rm moderncv.out
+	-rm moderncv.log
+	-rm moderncv.run.xml
+	-rm moderncv.pdf
