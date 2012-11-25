@@ -10,7 +10,7 @@
 \usepackage{footmisc}
 % moderncv themes
 \moderncvstyle{casual}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{blue}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvcolor{purple}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 %\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 %\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
 
@@ -23,8 +23,9 @@
 \setlength{\hintscolumnwidth}{2.5cm}           % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}      % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...}
 
-\input{macro.tex}
-\input{font.tex}
+\input{macro}
+\input{multiout}
+\input{font}
 % personal data
 \cvbl{
 \firstname{TAO}
@@ -56,8 +57,6 @@
 \usepackage{multibib}
 \newcites{conference,patent}{{\cvbl{Conference}{会议}},{\cvbl{Patent}{专利}}}
 %\newcites{book,misc}{{Books},{Others}}
-
-%\usepackage{draftwatermark}
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
